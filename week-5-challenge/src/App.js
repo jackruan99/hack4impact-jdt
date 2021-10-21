@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './Header';
+import Counter from './Counter';
+import Button from './Button';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Header />
+      <Counter count={0} />
+      <Button color='green' text='Add 1' />
+      <Button color='green' text='Minus 1' />
+      <Button color='red' text='Reset' />
     </div>
   );
 }
