@@ -1,15 +1,31 @@
+import { useState } from 'react';
+
 import Header from './Header';
 import Counter from './Counter';
 import Button from './Button';
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  const incrementCount = () => {
+    setCount(count + 1);
+  }
+
+  const decrementCount = () => {
+    setCount(count - 1);
+  }
+
+  const resetCount = () => {
+    setCount(0);
+  }
+
   return (
     <div className='App'>
       <Header />
-      <Counter count={0} />
-      <Button color='green' text='Add 1' />
-      <Button color='green' text='Minus 1' />
-      <Button color='red' text='Reset' />
+      <Counter count={count} />
+      <Button onClick={decrementCount} color='green' text='-1' />
+      <Button onClick={incrementCount} color='green' text='+1' />
+      <Button onClick={resetCount} color='red' text='Reset' />
     </div>
   );
 }
