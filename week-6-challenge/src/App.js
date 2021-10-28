@@ -5,14 +5,17 @@ import Counter from './Counter';
 import Button from './Button';
 
 function App() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);  // NOT THE BEST WAY
+  const [count, setCount] = useState(() => 0);
 
   const incrementCount = () => {
-    setCount(count + 1);
+    // setCount(count + 1);  // NOT THE BEST WAY 
+    setCount(prevCount => prevCount + 1);
   }
 
   const decrementCount = () => {
-    setCount(count - 1);
+    // setCount(count - 1);  // NOT THE BEST WAY 
+    setCount(prevCount => prevCount - 1);
   }
 
   const resetCount = () => {
