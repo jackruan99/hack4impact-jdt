@@ -1,7 +1,7 @@
 function Button(props) {
     return (
       <>
-        <button style={{ backgroundColor: props.color }} >{props.text}</button>
+        <button onClick={props.doSomething} style={{ backgroundColor: props.color }} >{props.text}</button>
       </>
     );
   }
